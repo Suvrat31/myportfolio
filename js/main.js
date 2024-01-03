@@ -182,7 +182,9 @@
             $folioItems.each(function(i) {
 
                 $(this).on('click', function(e) {
-                    e.stopPropagation();
+                    if (e.target.className == "im im-link") {
+                        return;
+                    }
                     e.preventDefault();
                     var options = {
                         index: i,
